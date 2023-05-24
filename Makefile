@@ -6,7 +6,8 @@ format:
 
 dist/index.html: Makefile index.html index.tsx
 	mkdir -p dist
-	deno eval 'import { bundle } from "https://deno.land/x/emit/mod.ts";'` \
+	deno eval \
+		'import { bundle } from "https://deno.land/x/emit@0.22.0/mod.ts";'` \
 			`' console.log((await bundle("./index.tsx", '"$$(\
 				cat deno.json)"')).code);' \
 		>dist/index.js
